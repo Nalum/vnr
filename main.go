@@ -2,12 +2,20 @@ package main
 
 import (
 	"bytes"
+	"flag"
 	"fmt"
 	"log"
 	"os/exec"
 )
 
 const version = "0.1.0"
+
+var show_version bool
+
+func init() {
+	flag.BoolVar(&show_version, "version", false, "Show the version of varnish-newrelic and check if there is a newer version available.")
+	flag.BoolVar(&show_version, "v", false, "Show the version of varnish-newrelic and check if there is a newer version available.")
+}
 
 type config struct {
 	key       string
@@ -148,6 +156,14 @@ type stat struct {
 }
 
 func main() {
+	flag.Parse()
+
+	if show_version {
+		fmt.Println("Version: " + version)
+		fmt.Println("You are using the most recent release.")
+		return
+	}
+
 	fmt.Println("Main Started")
 	varnishstat := exec.Command("varnishstat", "-j")
 	var out bytes.Buffer
