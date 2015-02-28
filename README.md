@@ -10,7 +10,7 @@ This plugin reads from a JSON config file of the following format:
 {
     "key": null,
     "instances": [],
-    "delay": 1
+    "interval": 1
 }
 ```
 
