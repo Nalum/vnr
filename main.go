@@ -12,10 +12,6 @@ import (
 	"time"
 )
 
-const version = "0.1.0"
-const NewRelicMetricURL = "https://platform-api.newrelic.com/platform/v1/metrics"
-const NewRelicGUID = "com.lukemallon.vnr"
-
 var showVersion bool
 
 func init() {
@@ -31,7 +27,7 @@ func main() {
 	flag.Parse()
 
 	if showVersion {
-		fmt.Println("Version: " + version)
+		fmt.Println("Version: " + Version)
 		fmt.Println("You are using the most recent release.")
 		return
 	}
