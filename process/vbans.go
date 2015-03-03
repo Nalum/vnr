@@ -21,12 +21,12 @@ import (
 	"log"
 )
 
-func VBans(Channels map[string]chan interface{}) {
+func VBans(Channel chan interface{}) {
 	var holder interface{}
 	var data structs.VBans
 
 	for {
-		holder = <-Channels["vbans"]
+		holder = <-Channel
 		data = holder.(structs.VBans)
 		log.Println(data)
 	}

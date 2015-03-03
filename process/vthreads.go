@@ -21,12 +21,12 @@ import (
 	"log"
 )
 
-func VThreads(Channels map[string]chan interface{}) {
+func VThreads(Channel chan interface{}) {
 	var holder interface{}
 	var data structs.VThreads
 
 	for {
-		holder = <-Channels["vthreads"]
+		holder = <-Channel
 		data = holder.(structs.VThreads)
 		log.Println(data)
 	}

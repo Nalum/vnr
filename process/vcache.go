@@ -21,12 +21,12 @@ import (
 	"log"
 )
 
-func VCache(Channels map[string]chan interface{}) {
+func VCache(Channel chan interface{}) {
 	var holder interface{}
 	var data structs.VCache
 
 	for {
-		holder = <-Channels["vcache"]
+		holder = <-Channel
 		data = holder.(structs.VCache)
 		log.Println(data)
 	}

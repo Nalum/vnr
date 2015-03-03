@@ -70,15 +70,15 @@ func main() {
 
 	tick := time.NewTicker(time.Second * time.Duration(VNRConfig.Interval))
 
-	go process.VBackend(Channels)
-	go process.VBans(Channels)
-	go process.VCache(Channels)
-	go process.VClient(Channels)
-	go process.VFetch(Channels)
-	go process.VNumbers(Channels)
-	go process.VSession(Channels)
-	go process.VThreads(Channels)
-	go process.VUpTime(Channels)
+	go process.VBackend(Channels["vbackend"])
+	go process.VBans(Channels["vbans"])
+	go process.VCache(Channels["vcache"])
+	go process.VClient(Channels["vclient"])
+	go process.VFetch(Channels["vfetch"])
+	go process.VNumbers(Channels["vnumbers"])
+	go process.VSession(Channels["vsession"])
+	go process.VThreads(Channels["vthreads"])
+	go process.VUpTime(Channels["vuptime"])
 
 	for _ = range tick.C {
 		log.Println("Tick")

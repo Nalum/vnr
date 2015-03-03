@@ -21,12 +21,12 @@ import (
 	"log"
 )
 
-func VNumbers(Channels map[string]chan interface{}) {
+func VNumbers(Channel chan interface{}) {
 	var holder interface{}
 	var data structs.VNumbers
 
 	for {
-		holder = <-Channels["vnumbers"]
+		holder = <-Channel
 		data = holder.(structs.VNumbers)
 		log.Println(data)
 	}

@@ -21,12 +21,12 @@ import (
 	"log"
 )
 
-func VSession(Channels map[string]chan interface{}) {
+func VSession(Channel chan interface{}) {
 	var holder interface{}
 	var data structs.VSession
 
 	for {
-		holder = <-Channels["vsession"]
+		holder = <-Channel
 		data = holder.(structs.VSession)
 		log.Println(data)
 	}

@@ -21,12 +21,12 @@ import (
 	"log"
 )
 
-func VUpTime(Channels map[string]chan interface{}) {
+func VUpTime(Channel chan interface{}) {
 	var holder interface{}
 	var data structs.VUpTime
 
 	for {
-		holder = <-Channels["vuptime"]
+		holder = <-Channel
 		data = holder.(structs.VUpTime)
 		log.Println(data)
 	}

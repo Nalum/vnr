@@ -21,12 +21,12 @@ import (
 	"log"
 )
 
-func VFetch(Channels map[string]chan interface{}) {
+func VFetch(Channel chan interface{}) {
 	var holder interface{}
 	var data structs.VFetch
 
 	for {
-		holder = <-Channels["vfetch"]
+		holder = <-Channel
 		data = holder.(structs.VFetch)
 		log.Println(data)
 	}

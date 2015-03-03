@@ -21,12 +21,12 @@ import (
 	"log"
 )
 
-func VBackend(Channels map[string]chan interface{}) {
+func VBackend(Channel chan interface{}) {
 	var holder interface{}
 	var data structs.VBackend
 
 	for {
-		holder = <-Channels["vbackend"]
+		holder = <-Channel
 		data = holder.(structs.VBackend)
 		log.Println(data)
 	}
