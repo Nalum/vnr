@@ -4,65 +4,107 @@ import (
 	"testing"
 )
 
-func TestVBackendString(t *testing.T) {
-	data := VBackend{
+func TestVNumbersString(t *testing.T) {
+	data := VNumbers{
 		Timestamp: "timestamp",
-		Conn: VData{
+		Object: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Unhealthy: VData{
+		VampireObject: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Busy: VData{
+		ObjectCore: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Fail: VData{
+		ObjectHead: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Reuse: VData{
+		WaitingList: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		TooLate: VData{
+		Backend: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Recycle: VData{
+		Expired: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Retry: VData{
+		LruNuked: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Req: VData{
+		LruMoved: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		Vcl: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		VclAvail: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		VclDiscard: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		Purges: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		ObjPurged: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		Gzip: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		Gunzip: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
 	}
-	want := "Timestamp: timestamp - Number of Connections: 42"
+	want := "Timestamp: timestamp - Number of Objects: 42"
 
 	if result := data.String(); result != want {
 		t.Errorf("Stringer function didn't return expected result.\nWant: \"%v\"\nResult: \"%v\"", want, result)

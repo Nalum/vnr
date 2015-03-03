@@ -5,14 +5,14 @@ import (
 )
 
 func TestConfigString(t *testing.T) {
-	config := Config{
+	data := Config{
 		Key:       "123",
 		Instances: []string{"a", "b"},
 		Interval:  3,
 	}
 	want := "Key: 123 - Instances: [a b] - Interval: 3"
 
-	if result := config.String(); result != want {
-		t.Errorf("Config Stringer function didn't return expected result.\nWant: \"%v\"\nResult: \"%v\"", want, result)
+	if result := data.String(); result != want {
+		t.Errorf("Stringer function didn't return expected result.\nWant: \"%v\"\nResult: \"%v\"", want, result)
 	}
 }

@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func TestVBackendString(t *testing.T) {
-	data := VBackend{
+func TestVSessionString(t *testing.T) {
+	data := VSession{
 		Timestamp: "timestamp",
 		Conn: VData{
 			VSType:      "string",
@@ -13,13 +13,7 @@ func TestVBackendString(t *testing.T) {
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Unhealthy: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		Busy: VData{
+		Drop: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
@@ -31,38 +25,50 @@ func TestVBackendString(t *testing.T) {
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Reuse: VData{
+		PipeOverflow: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		TooLate: VData{
+		Closed: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Recycle: VData{
+		PipeLine: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Retry: VData{
+		ReadAhead: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Req: VData{
+		Herd: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		Queued: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		Dropped: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
 	}
-	want := "Timestamp: timestamp - Number of Connections: 42"
+	want := "Timestamp: timestamp - Number of Session Connections: 42"
 
 	if result := data.String(); result != want {
 		t.Errorf("Stringer function didn't return expected result.\nWant: \"%v\"\nResult: \"%v\"", want, result)

@@ -4,65 +4,89 @@ import (
 	"testing"
 )
 
-func TestVBackendString(t *testing.T) {
-	data := VBackend{
+func TestVFetchString(t *testing.T) {
+	data := VFetch{
 		Timestamp: "timestamp",
-		Conn: VData{
+		Head: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Unhealthy: VData{
+		Length: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Busy: VData{
+		Chunked: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Fail: VData{
+		EOF: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Reuse: VData{
+		Bad: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		TooLate: VData{
+		Close: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Recycle: VData{
+		OldHttp: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Retry: VData{
+		Zero: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Req: VData{
+		F1xx: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		F204: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		F304: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		Failed: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		NoThread: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
 	}
-	want := "Timestamp: timestamp - Number of Connections: 42"
+	want := "Timestamp: timestamp - Fetch Head: 42"
 
 	if result := data.String(); result != want {
 		t.Errorf("Stringer function didn't return expected result.\nWant: \"%v\"\nResult: \"%v\"", want, result)

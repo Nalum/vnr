@@ -4,52 +4,22 @@ import (
 	"testing"
 )
 
-func TestVBackendString(t *testing.T) {
-	data := VBackend{
+func TestVBansString(t *testing.T) {
+	data := VBans{
 		Timestamp: "timestamp",
-		Conn: VData{
+		Count: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Unhealthy: VData{
+		Completed: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Busy: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		Fail: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		Reuse: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		TooLate: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		Recycle: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		Retry: VData{
+		Obj: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
@@ -61,8 +31,80 @@ func TestVBackendString(t *testing.T) {
 			Flag:        "a",
 			Description: "A description of the item",
 		},
+		Added: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		Deleted: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		Tested: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		ObjKilled: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		LurkerTested: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		TestsTested: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		LurkerTestsTested: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		LurkerObjKilled: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		Dups: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		LurkerContention: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		PersistedBytes: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
+		PersistedFragmentation: VData{
+			VSType:      "string",
+			Value:       42,
+			Flag:        "a",
+			Description: "A description of the item",
+		},
 	}
-	want := "Timestamp: timestamp - Number of Connections: 42"
+	want := "Timestamp: timestamp - Number of Bans: 42"
 
 	if result := data.String(); result != want {
 		t.Errorf("Stringer function didn't return expected result.\nWant: \"%v\"\nResult: \"%v\"", want, result)

@@ -4,52 +4,28 @@ import (
 	"testing"
 )
 
-func TestVBackendString(t *testing.T) {
-	data := VBackend{
+func TestVClientString(t *testing.T) {
+	data := VClient{
 		Timestamp: "timestamp",
-		Conn: VData{
+		Req400: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Unhealthy: VData{
+		Req411: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Busy: VData{
+		Req413: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Fail: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		Reuse: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		TooLate: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		Recycle: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		Retry: VData{
+		Req417: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
@@ -62,7 +38,7 @@ func TestVBackendString(t *testing.T) {
 			Description: "A description of the item",
 		},
 	}
-	want := "Timestamp: timestamp - Number of Connections: 42"
+	want := "Timestamp: timestamp - Number of Client Requests: 42"
 
 	if result := data.String(); result != want {
 		t.Errorf("Stringer function didn't return expected result.\nWant: \"%v\"\nResult: \"%v\"", want, result)

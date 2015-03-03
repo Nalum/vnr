@@ -4,65 +4,53 @@ import (
 	"testing"
 )
 
-func TestVBackendString(t *testing.T) {
-	data := VBackend{
+func TestVThreadsString(t *testing.T) {
+	data := VThreads{
 		Timestamp: "timestamp",
-		Conn: VData{
+		Pools: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Unhealthy: VData{
+		Count: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Busy: VData{
+		Limited: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Fail: VData{
+		Created: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Reuse: VData{
+		Destroyed: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		TooLate: VData{
+		Failed: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
-		Recycle: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		Retry: VData{
-			VSType:      "string",
-			Value:       42,
-			Flag:        "a",
-			Description: "A description of the item",
-		},
-		Req: VData{
+		QueueLen: VData{
 			VSType:      "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
 	}
-	want := "Timestamp: timestamp - Number of Connections: 42"
+	want := "Timestamp: timestamp - Number of Threads: 42"
 
 	if result := data.String(); result != want {
 		t.Errorf("Stringer function didn't return expected result.\nWant: \"%v\"\nResult: \"%v\"", want, result)
