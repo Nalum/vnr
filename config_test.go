@@ -1,9 +1,12 @@
-package structs
+package main
 
-import "testing"
+import (
+	"github.com/nalum/vnr/structs"
+	"testing"
+)
 
 func TestString(t *testing.T) {
-	config := Config{
+	config := structs.Config{
 		Key:       "123",
 		Instances: []string{"a", "b"},
 		Interval:  3,
