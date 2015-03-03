@@ -1,10 +1,10 @@
-package main
+package structs
 
 import (
 	"testing"
 )
 
-func TestString(t *testing.T) {
+func TestConfigString(t *testing.T) {
 	config := Config{
 		Key:       "123",
 		Instances: []string{"a", "b"},
