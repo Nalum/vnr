@@ -2,6 +2,8 @@
 
 This is a plugin for NewRelic that reads from `varnishstat` and reports the data to NewRelic. Optionally it can also read from `varnishncsa`.
 
+[![Build Status](https://travis-ci.org/Nalum/vnr.svg?branch=master)](https://travis-ci.org/Nalum/vnr)
+
 # Config
 
 This plugin reads from a JSON config file of the following format:
