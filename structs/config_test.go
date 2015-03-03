@@ -8,8 +8,9 @@ func TestString(t *testing.T) {
 		Instances: []string{"a", "b"},
 		Interval:  3,
 	}
+	want := "Key: 123 - Instances: [a b] - Interval: 3"
 
-	if result := config.String(); result != "Key: 123 - Instances: [a b] - Interval: 3" {
-		t.Errorf("Config Stringer function didn't return expected result. \"%v\"", result)
+	if result := config.String(); result != want {
+		t.Errorf("Config Stringer function didn't return expected result.\nWant: \"%v\"\nResult: \"%v\"", want, result)
 	}
 }
