@@ -56,7 +56,7 @@ func main() {
 		return
 	}
 
-	CFGJson, err := ioutil.ReadFile("/etc/varnish-newrelic.json")
+	CFGJson, err := ioutil.ReadFile(ConfigFile)
 
 	if err != nil {
 		log.Fatalln(err)
