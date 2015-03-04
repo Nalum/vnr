@@ -19,7 +19,7 @@ This plugin reads from a JSON config file of the following format:
 Available options:
 
 * `key` : This is the NewRelic API Key for your account. Default: `null`
-* `instances` : This is a list of varnish instance names. Leave empty if you haven't specified you own name for varnish instances. Default: `[]`
+* `instances` : This is a list of varnish instance names. Leave empty if you haven't specified your own name for varnish instances. Default: `[]`
 * `delay` : The number of seconds to wait between each stat check. Default: `1`
 
 # Running the Plugin
