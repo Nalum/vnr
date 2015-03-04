@@ -14,16 +14,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-package main
+package process
 
 import (
 	"testing"
 )
 
-func TestMain(t *testing.T) {
-	t.Error("main is failing because there is no test.")
-}
-
-func TestVarnishStat(t *testing.T) {
-	t.Error("varnishStat is failing because there is no test.")
+func TestVUpTime(t *testing.T) {
+	t.Error("vuptime is failing because there is no test.")
 }
