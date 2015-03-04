@@ -12,7 +12,11 @@ This plugin reads from a JSON config file of the following format, the values he
 {
     "key": null,
     "instances": [],
-    "interval": 1
+    "interval": 1,
+    "varnishstat": {
+        "type": "command",
+        "path": null
+    }
 }
 ```
 
@@ -21,6 +25,10 @@ Available options:
 * `key` : This is the NewRelic API Key for your account.
 * `instances` : This is a list of Varnish instance names. Leave empty if you haven't specified your own name for Varnish instances.
 * `interval` : The number of seconds to wait between each stat check. <br> **Note**: NewRelic only accepts data once a minute so this data will be processed and then once a minute the data will be sent.
+* `varnishstat.type` : This tells the agent if we are going to use the `varnishstat` command or if we are going to use the output file of the `varnishstat` command.<br>Possible values are:
+ * `command`
+ * `file`
+* `varnishstat.path` : If `varnishstat.type` is set to file this must be set to the path of the `varnishstat` output file.
 
 This config file should be located in `/etc` and called `vnr.json` and be readable by the user `vnr`.
 
