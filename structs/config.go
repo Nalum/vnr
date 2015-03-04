@@ -19,11 +19,17 @@ package structs
 import "fmt"
 
 type Config struct {
-	Key       string
-	Instances []string
-	Interval  int
+	Key         string
+	Instances   []string
+	Interval    int
+	VarnishStat VarnishStat
+}
+
+type VarnishStat struct {
+	Type string
+	Path string
 }
 
 func (c Config) String() string {
-	return fmt.Sprintf("Key: %v - Instances: %v - Interval: %v", c.Key, c.Instances, c.Interval)
+	return fmt.Sprintf("Key: %v - Instances: %v - Interval: %v - VarnishStat.Type: %v - VarnishStat.Path: %v", c.Key, c.Instances, c.Interval, c.VarnishStat.Type, c.VarnishStat.Path)
 }

@@ -24,19 +24,19 @@ func TestVCacheString(t *testing.T) {
 	data := VCache{
 		Timestamp: "timestamp",
 		Hit: VData{
-			VSType:      "string",
+			Type:        "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
 		HitPass: VData{
-			VSType:      "string",
+			Type:        "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
 		},
 		Miss: VData{
-			VSType:      "string",
+			Type:        "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",

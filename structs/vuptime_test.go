@@ -24,7 +24,7 @@ func TestVUpTimeString(t *testing.T) {
 	data := VUpTime{
 		Timestamp: "timestamp",
 		Count: VData{
-			VSType:      "string",
+			Type:        "string",
 			Value:       42,
 			Flag:        "a",
 			Description: "A description of the item",
