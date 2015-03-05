@@ -2,7 +2,10 @@
 
 This is a plugin for NewRelic that reads from `varnishstat` and reports the data to NewRelic.
 
-[![Build Status](https://travis-ci.org/Nalum/vnr.svg?branch=master)](https://travis-ci.org/Nalum/vnr) [![Coverage Status](https://coveralls.io/repos/Nalum/vnr/badge.svg)](https://coveralls.io/r/Nalum/vnr)
+[![Build Status](https://img.shields.io/travis/Nalum/vnr.svg?branch=master&style=flat-square)](https://travis-ci.org/Nalum/vnr)
+[![Coverage Status](https://img.shields.io/coveralls/Nalum/vnr.svg?style=flat-square)](https://coveralls.io/r/Nalum/vnr)
+[![GPL License](http://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](http://opensource.org/licenses/GPL-3.0)
+[![GitHub Release](https://img.shields.io/github/release/Nalum/vnr.svg?style=flat-square)](https://github.com/Nalum/vnr/releases)
 
 # Config
 
